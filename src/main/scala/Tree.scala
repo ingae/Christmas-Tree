@@ -2,13 +2,14 @@ import scala.io.StdIn
 import scala.sys.exit
 
 object Tree extends App {
-  var Height = 0
+  var Height = 3
   if (args.length == 1) {
     Height = args(0).toInt
   }
   else {
     println("How many lines in your Christmas tree?")
-    Height = StdIn.readLine.toInt
+    val userInput = StdIn.readLine
+    if (userInput.length>0) Height = userInput.toInt
   }
   if (Height <= 0) {
     println("Such trees not available")
